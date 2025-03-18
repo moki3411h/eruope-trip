@@ -1,0 +1,167 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #0073e6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header button {
+    background: white;
+    color: #0073e6;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+header button:hover {
+    background: #005bb5;
+    color: white;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #444;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background: #0073e6;
+    border-radius: 5px;
+}
+
+/* Packages Section */
+.packages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.package {
+    background: white;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.package img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.package h2 {
+    color: #0073e6;
+}
+
+.price, .hotel-price, .flight-price {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+button {
+    background: #0073e6;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #005bb5;
+}
+
+/* Food Section */
+#food {
+    background: #eee;
+    padding: 20px;
+    text-align: center;
+}
+
+.food-item {
+    margin: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Reviews Section */
+#reviews {
+    padding: 20px;
+    text-align: center;
+}
+
+.review {
+    background: white;
+    padding: 10px;
+    margin: 10px auto;
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form */
+#contact {
+    background: #0073e6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#contact form input, #contact form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+#contact button {
+    background: white;
+    color: #0073e6;
+}
+
+#contact button:hover {
+    background: #005bb5;
+    color: white;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode .package, .dark-mode .food-item, .dark-mode .review {
+    background-color: #333;
+    color: white;
+}
+
