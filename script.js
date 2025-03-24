@@ -14,10 +14,8 @@ $(document).ready(function() {
             $("#subtitle").text("Finden Sie die besten Reisepakete für Ihren Traumurlaub in Europa!");
             $("#language-toggle").text("English");
             $(".discount-banner h2").text("🔥 Begrenztes Angebot: 10% Rabatt auf alle Reisen! Jetzt buchen! 🔥");
-
-            $("nav ul li a[href='#reviews']").text("Bewertungen");
+            
             $("#reviews h2").text("🌟 Kundenbewertungen");
-
             $("#contact h2").text("📩 Kontaktieren Sie uns");
             $("form input[placeholder='Your Name']").attr("placeholder", "Ihr Name");
             $("form input[placeholder='Your Email']").attr("placeholder", "Ihre E-Mail");
@@ -44,28 +42,26 @@ $(document).ready(function() {
         $("form")[0].reset();
     });
 
+    // Payment Method
+    $(".package button").click(function() {
+        let packageName = $(this).siblings("h2").text();
+        let price = $(this).siblings(".price").text();
+        let paymentMethod = prompt("Enter payment method (Credit Card, PayPal, Bank Transfer):");
+        if (paymentMethod) {
+            alert("Payment successful for " + packageName + " with " + paymentMethod + "!");
+        }
+    });
+
     // Review Submission
+    $("#reviews").append('<h3>Leave a Review</h3><form id="review-form"><input type="text" id="review-name" placeholder="Your Name" required><textarea id="review-text" placeholder="Your Review" required></textarea><button type="submit">Submit Review</button></form><div id="user-reviews"></div>');
+
     $("#review-form").submit(function(event) {
         event.preventDefault();
         let name = $("#review-name").val();
         let review = $("#review-text").val();
         if (name && review) {
-            let newReview = `<div class='review'>"${review}" - ${name} ⭐⭐⭐⭐⭐</div>`;
-            $("#reviews").append(newReview);
+            $("#user-reviews").append("<div class='review'><strong>" + name + "</strong>: " + review + " ⭐⭐⭐⭐⭐</div>");
             $("#review-form")[0].reset();
-        } else {
-            alert("Please fill out both fields.");
-        }
-    });
-
-    // Payment Handling
-    $(".package button").click(function() {
-        let trip = $(this).siblings("h2").text();
-        let price = $(this).siblings(".price").text().replace("💰 Trip Price: ", "");
-        let confirmation = confirm(`Proceed to payment for ${trip} - ${price}?`);
-        if (confirmation) {
-            alert("Redirecting to secure payment gateway...");
-            // Here you can integrate an actual payment gateway
         }
     });
 });
