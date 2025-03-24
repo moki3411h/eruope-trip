@@ -97,5 +97,9 @@ $(document).ready(function() {
         alert("Thank you for contacting us! We will get back to you soon.");
         $("form")[0].reset();
     });
-});
 
+    // Payment Page Redirection
+    $(".package button").click(function() {
+        window.location.href = "payment.html";
+    });
+});
