@@ -40,30 +40,23 @@
         <div class="review">"Switzerland’s mountains are breathtaking!" - SARAYU ⭐⭐⭐⭐⭐</div>
         <div class="review">"Rome was a dream come true!" - NIVETHITA ⭐⭐⭐⭐⭐</div>
         <div class="review">"Spain’s culture is amazing!" - EMILY ⭐⭐⭐⭐⭐</div>
-
-        <!-- New Review Submission Form -->
+        
+        <!-- User Review Submission -->
         <h3>Leave a Review</h3>
         <form id="review-form">
-            <input type="text" id="reviewer-name" placeholder="Your Name" required>
+            <input type="text" id="review-name" placeholder="Your Name" required>
             <textarea id="review-text" placeholder="Your Review" required></textarea>
-            <select id="review-rating">
-                <option value="5">⭐⭐⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="1">⭐</option>
-            </select>
             <button type="submit">Submit Review</button>
         </form>
-        <div id="review-list"></div>
+        <div id="user-reviews"></div>
     </section>
 
+    <!-- Payment Section -->
     <section id="payment">
-        <h2>💳 Secure Your Booking</h2>
+        <h2>💳 Secure Payment</h2>
         <form id="payment-form">
-            <input type="text" placeholder="Full Name" required>
             <input type="text" placeholder="Card Number" required>
-            <input type="text" placeholder="Expiration Date (MM/YY)" required>
+            <input type="text" placeholder="Expiry Date (MM/YY)" required>
             <input type="text" placeholder="CVV" required>
             <button type="submit">Pay Now</button>
         </form>
@@ -71,17 +64,26 @@
 
     <script>
         $(document).ready(function() {
-            $('#review-form').submit(function(event) {
+            // User Review Submission
+            $("#review-form").submit(function(event) {
                 event.preventDefault();
-                let name = $('#reviewer-name').val();
-                let text = $('#review-text').val();
-                let rating = $('#review-rating').val();
-                let reviewHTML = `<div class='review'>"${text}" - ${name} ${'⭐'.repeat(rating)}</div>`;
-                $('#review-list').append(reviewHTML);
-                $('#review-form')[0].reset();
+                var name = $("#review-name").val();
+                var review = $("#review-text").val();
+                if (name && review) {
+                    $("#user-reviews").append(`<div class='review'>"${review}" - ${name} ⭐⭐⭐⭐⭐</div>`);
+                    $("#review-form")[0].reset();
+                }
+            });
+
+            // Payment Form Submission
+            $("#payment-form").submit(function(event) {
+                event.preventDefault();
+                alert("Payment successful! Thank you for booking with us.");
+                $("#payment-form")[0].reset();
             });
         });
     </script>
 
 </body>
 </html>
+
