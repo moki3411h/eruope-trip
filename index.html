@@ -34,55 +34,115 @@
         </ul>
     </nav>
 
+    <section class="packages">
+        <div class="package" id="paris">
+            <img src="paris.jpg" alt="Paris">
+            <h2>Paris Getaway</h2>
+            <p>5-day romantic tour in Paris.</p>
+            <p class="price">💰 Trip Price: $1200</p>
+            <p class="hotel-price">🏨 Hotel: $500 (5 nights)</p>
+            <p class="flight-price">✈️ Flight: $400</p>
+            <button>Book Now</button>
+        </div>
+
+        <div class="package" id="swiss">
+            <img src="swiss.jpg" alt="Swiss Alps">
+            <h2>Swiss Alps Adventure</h2>
+            <p>Experience the beauty of the Swiss Alps.</p>
+            <p class="price">💰 Trip Price: $1500</p>
+            <p class="hotel-price">🏨 Hotel: $700 (5 nights)</p>
+            <p class="flight-price">✈️ Flight: $500</p>
+            <button>Book Now</button>
+        </div>
+
+        <div class="package" id="italy">
+            <img src="italy.jpg" alt="Italy">
+            <h2>Italian Escapade</h2>
+            <p>Discover the rich history of Italy.</p>
+            <p class="price">💰 Trip Price: $1100</p>
+            <p class="hotel-price">🏨 Hotel: $450 (5 nights)</p>
+            <p class="flight-price">✈️ Flight: $350</p>
+            <button>Book Now</button>
+        </div>
+
+        <div class="package" id="spain">
+            <img src="spain.jpg" alt="Spain">
+            <h2>Spanish Fiesta</h2>
+            <p>Enjoy the lively culture of Spain.</p>
+            <p class="price">💰 Trip Price: $1300</p>
+            <p class="hotel-price">🏨 Hotel: $600 (5 nights)</p>
+            <p class="flight-price">✈️ Flight: $450</p>
+            <button>Book Now</button>
+        </div>
+
+        <div class="package" id="greece">
+            <img src="greece.jpg" alt="Greece">
+            <h2>Greek Islands</h2>
+            <p>Relax on the stunning beaches of Greece.</p>
+            <p class="price">💰 Trip Price: $1400</p>
+            <p class="hotel-price">🏨 Hotel: $650 (5 nights)</p>
+            <p class="flight-price">✈️ Flight: $480</p>
+            <button>Book Now</button>
+        </div>
+
+        <div class="package" id="prague">
+            <img src="prague.jpg" alt="Prague">
+            <h2>Prague Wonders</h2>
+            <p>Explore the historical beauty of Prague.</p>
+            <p class="price">💰 Trip Price: $1250</p>
+            <p class="hotel-price">🏨 Hotel: $500 (5 nights)</p>
+            <p class="flight-price">✈️ Flight: $400</p>
+            <button>Book Now</button>
+        </div>
+    </section>
+
+    <section id="food">
+        <h2>🍽️ Famous Foods in Each Destination</h2>
+        <div class="food-item">
+            <h3>Paris 🇫🇷</h3>
+            <p>🥐 Croissants | 🥖 Baguette | 🍮 Crème Brûlée</p>
+        </div>
+        <div class="food-item">
+            <h3>Swiss Alps 🇨🇭</h3>
+            <p>🧀 Cheese Fondue | 🍫 Swiss Chocolate | 🥔 Rösti</p>
+        </div>
+        <div class="food-item">
+            <h3>Italy 🇮🇹</h3>
+            <p>🍕 Pizza | 🍝 Pasta | 🍨 Gelato</p>
+        </div>
+        <div class="food-item">
+            <h3>Spain 🇪🇸</h3>
+            <p>🥘 Paella | 🍖 Jamón | 🍷 Sangria</p>
+        </div>
+        <div class="food-item">
+            <h3>Greece 🇬🇷</h3>
+            <p>🥙 Gyros | 🧀 Feta Cheese | 🍯 Baklava</p>
+        </div>
+        <div class="food-item">
+            <h3>Prague 🇨🇿</h3>
+            <p>🥩 Goulash | 🍞 Trdelník | 🍺 Czech Beer</p>
+        </div>
+    </section>
+
     <section id="reviews">
         <h2>🌟 Customer Reviews</h2>
         <div class="review">"Paris was magical! Loved the food!" - MOKESH ⭐⭐⭐⭐⭐</div>
         <div class="review">"Switzerland’s mountains are breathtaking!" - SARAYU ⭐⭐⭐⭐⭐</div>
         <div class="review">"Rome was a dream come true!" - NIVETHITA ⭐⭐⭐⭐⭐</div>
         <div class="review">"Spain’s culture is amazing!" - EMILY ⭐⭐⭐⭐⭐</div>
-        
-        <!-- User Review Submission -->
-        <h3>Leave a Review</h3>
-        <form id="review-form">
-            <input type="text" id="review-name" placeholder="Your Name" required>
-            <textarea id="review-text" placeholder="Your Review" required></textarea>
-            <button type="submit">Submit Review</button>
-        </form>
-        <div id="user-reviews"></div>
     </section>
 
-    <!-- Payment Section -->
-    <section id="payment">
-        <h2>💳 Secure Payment</h2>
-        <form id="payment-form">
-            <input type="text" placeholder="Card Number" required>
-            <input type="text" placeholder="Expiry Date (MM/YY)" required>
-            <input type="text" placeholder="CVV" required>
-            <button type="submit">Pay Now</button>
+    <section id="contact">
+        <h2>📩 Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 
-    <script>
-        $(document).ready(function() {
-            // User Review Submission
-            $("#review-form").submit(function(event) {
-                event.preventDefault();
-                var name = $("#review-name").val();
-                var review = $("#review-text").val();
-                if (name && review) {
-                    $("#user-reviews").append(`<div class='review'>"${review}" - ${name} ⭐⭐⭐⭐⭐</div>`);
-                    $("#review-form")[0].reset();
-                }
-            });
-
-            // Payment Form Submission
-            $("#payment-form").submit(function(event) {
-                event.preventDefault();
-                alert("Payment successful! Thank you for booking with us.");
-                $("#payment-form")[0].reset();
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
