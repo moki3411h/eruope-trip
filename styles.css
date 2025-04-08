@@ -128,6 +128,72 @@ button:hover {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Payment Section */
+#payment {
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.payment-method {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.payment-method h3 {
+    color: #0073e6;
+    margin-top: 0;
+}
+
+.upi-details {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f0f7ff;
+    border-radius: 5px;
+}
+
+.upi-details p {
+    margin: 5px 0;
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+    display: block;
+    border: 1px solid #ddd;
+}
+
+.card-icons {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.payment-instructions {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.payment-instructions ol {
+    padding-left: 20px;
+}
+
 /* Contact Form */
 #contact {
     background: #0073e6;
@@ -160,18 +226,19 @@ button:hover {
     color: white;
 }
 
-.dark-mode .package, .dark-mode .food-item, .dark-mode .review {
+.dark-mode .package, 
+.dark-mode .food-item, 
+.dark-mode .review,
+.dark-mode .payment-method,
+.dark-mode .payment-instructions {
     background-color: #333;
     color: white;
 }
-// Payment Page Redirection
-$(".package button").click(function() {
-    window.location.href = "payment.html";
-});
 
-// Payment Method Integration (Example for PayPal)
-$("#payment-button").click(function() {
-    alert("Redirecting to payment gateway...");
-    window.location.href = "https://www.paypal.com/checkout"; // Replace with actual payment link
-});
+.dark-mode .upi-details {
+    background-color: #444;
+}
 
+.dark-mode #payment {
+    background-color: #2a2a2a;
+}
